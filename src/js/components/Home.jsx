@@ -1,28 +1,18 @@
 import React from "react";
-
+import Counter from "./Contador"
 //include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+
 
 //create your first component
+let seconds = 456
 const Home = () => {
-	return (
-		<div className="text-center">
-            
-
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+	setInterval(() => { seconds++; 
+		document.getElementById("counter").innerText = `Los segundos son: ${seconds}`;
+	 }, 1000);
+	  return (
+	  <div className="App"> 
+	  <Counter time={seconds}/> 
+	  </div>);
 };
 
 export default Home;
